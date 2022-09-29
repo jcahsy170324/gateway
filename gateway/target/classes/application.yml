@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: xxooroutes
+          #          uri: http://81.69.193.138:8848
+          uri: lb://consumer
+          predicates:
+            - Path=/loadBalance/demo/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: 81.69.193.138:8848
+server:
+  port: 8088
+
+consumer:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.example.gateway.loadBalance.MyRule
+
+

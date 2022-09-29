@@ -1,0 +1,9 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 81.69.193.138:8848
