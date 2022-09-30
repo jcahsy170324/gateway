@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpResponse;
+import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -19,6 +20,7 @@ import reactor.core.publisher.Mono;
  * @Date 2022/9/29 17:23
  * @Version 1.0
  **/
+@Component
 public class MyFilter implements Ordered, GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

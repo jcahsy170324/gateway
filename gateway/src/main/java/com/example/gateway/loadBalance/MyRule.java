@@ -3,6 +3,7 @@ package com.example.gateway.loadBalance;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
 import com.netflix.loadbalancer.Server;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @Date 2022/9/29 17:22
  * @Version 1.0
  **/
+@Component
 public class MyRule extends AbstractLoadBalancerRule {
     @Override
     public void initWithNiwsConfig(IClientConfig iClientConfig) {
